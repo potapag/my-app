@@ -1,14 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import reactDom from "react-dom";
+// import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.css";
+import Counter from "./components/counter";
 
-// const element = <h1>hello world</h1>
+// React 17
 
-// console.log(element);
-// reactDom.createRoot(element, document.getElementById("root"));
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-            <React.StrictMode>
-                <h1>hello world</h1>
-            </React.StrictMode>
-);
+const App = () => {
+    return <Counter />;
+};
+
+reactDom.render(<App />, document.getElementById("root"));
+
+// React 18
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(
+//             <React.StrictMode>
+//                 <h1>hello world</h1>
+//             </React.StrictMode>
+// );
