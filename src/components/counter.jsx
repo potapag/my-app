@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const Counter = (props) => {
-    const [value, setCount] = useState(props.value);
+    const {value} = props;
 
     const formatValue = () => {
         return value === 0 ? "empty" : value;
@@ -14,11 +14,11 @@ const Counter = (props) => {
     }
 
     const hemdleIncrement = () => {
-        setCount((prevState) => prevState + 1);
+        props.onIncrement(props.id);
     };
 
     const hemdleDecrement = () => {
-        setCount((prevState) => prevState - 1);
+        props.onDecrement(props.id);
     };
 
     return (
